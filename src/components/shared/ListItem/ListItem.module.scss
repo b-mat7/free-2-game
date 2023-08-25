@@ -1,4 +1,4 @@
-@use '../../../assets/styles/variables';
+@use "../../../assets/styles/variables.module.scss" as var;
 
 .list_item {
   max-width: 300px;

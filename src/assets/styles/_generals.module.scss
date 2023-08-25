@@ -1,8 +1,8 @@
 // ==================================
 //           IMPORT
 // ==================================
-@use "./mixins";
-@use "./variables" as var;
+@use "./mixins.module.scss";
+@use "./variables.module.scss" as var;
 
 // ==================================
 //           GENERAL STYLES

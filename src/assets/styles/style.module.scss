@@ -1,10 +1,10 @@
 // ==================================
 //           IMPORT
 // ==================================
-@use "./generals";
-@use "./mixins";
-@use "./resets";
-@use "./variables" as var;
+@use "./generals.module.scss";
+@use "./mixins.module.scss";
+@use "./resets.module.scss";
+@use "./variables.module.scss" as var;
 
 // ==================================
 //           APP STYLES
