@@ -10,6 +10,11 @@
 //           APP STYLES
 // ==================================
 
-h1 {
-  color: blue
+main {
+  max-width: var.$root_width_desktop;
+  margin: 0 auto;
+  padding: 1rem;
+
+  //
+  background-color: blue;
 }

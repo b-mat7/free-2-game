@@ -1,0 +1,46 @@
+@use '../../../assets/styles/variables';
+
+.list_item {
+  max-width: 288px;
+  border-radius: 25px;
+
+  background-color: red;
+
+  .hero img {
+    border-radius: 25px;
+  }
+
+  .content {
+    padding: 0.5rem;
+    height: 8rem;
+    // background-color: aqua;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    p {
+      padding: 0.3rem 0;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      // text-overflow: ellipsis;
+      // overflow-wrap: normal;
+    }
+  }
+
+  .details {
+    padding: 0.5rem;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .info {
+    border-top: 1px solid green;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+}

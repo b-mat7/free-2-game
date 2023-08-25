@@ -1,13 +1,17 @@
+import { Routes, Route } from 'react-router-dom'
 
 import './App.scss'
+import Home from './components/pages/Home/Home'
 
 
 // import reactLogo from './assets/images/react.svg'
 function App() {
 
   return (
-    <>
-
+    <main>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
 
 
       {/* <div>
@@ -23,7 +27,7 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p> */}
-    </>
+    </main>
   )
 }
 

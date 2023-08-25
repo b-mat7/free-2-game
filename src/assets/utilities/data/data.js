@@ -1,6 +1,6 @@
 "use strict"
 
-export const dataListItem = [
+export const dataListItems = [
   {
     id: 540,
     title: "Overwatch 2",

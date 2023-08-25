@@ -2,8 +2,13 @@
 //           IMPORT
 // ==================================
 @font-face {
-  font-family: "";
-  src: url();
+  font-family: Space_Grotesk;
+  src: url('../fonts/Space_Grotesk/SpaceGrotesk-VariableFont_wght.ttf');
+}
+
+@font-face {
+  font-family: Titillium_Web;
+  src: url('../fonts/Titillium_Web/TitilliumWeb-Regular.ttf');
 }
 
 // ==================================
@@ -11,24 +16,23 @@
 // ==================================
 
 // ========= Styling ================
-// $font-family_primary: Helvetica;
-// $font-family_accent1: Alegreya_Sans;
-// $font-family_accent2: Alegreya_SC;
-// $font-family_accent3: Nixie_One;
 
-// $font-size_text: 0.875rem;
+// $font-family_primary: Space_Grotesk;
+// $font-family_accent: Titilllium_Web;
 
 // $line-height_primary: 1.5;
 
-// $color_primary: hsla(0, 0%, 42%, 1);
+$color_primary: hsla(0, 0%, 100%, 0.87);
 // $color_accent1: hsla(187, 17%, 27%, 1);
 // $color_accent2: hsla(0, 0%, 100%, 1);
 // $color_overlay_grid: hsla(182, 93%, 12%, 0.7);
 // $color_overlay_container: hsla(0, 0%, 0%, 0.2);
-// $color_root_background: hsla(0, 3%, 94%, 1);
+$color_root_background: hsla(0, 0%, 14%, 1);
+
 
 // ========= Root =============
-// $root_width_desktop: 1440px;
+// $root_width_desktop: 1280px;
+$root_width_desktop: 1440px;
 
 // ========= Local =============
 // $section_padding_grid: 3.5rem 150px 5.5rem 150px;
