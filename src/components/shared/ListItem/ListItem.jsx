@@ -6,7 +6,6 @@ import iconBrowser from '../../../assets/images/iconBrowser.svg'
 import styles from './ListItem.module.scss'
 
 const ListItem = ({ game }) => {
-  console.log(game)
 
   const platformIcon = (
     <img src={game.platform === "Web Browser" ? iconBrowser : iconWindows}></img>)
@@ -26,7 +25,6 @@ const ListItem = ({ game }) => {
         <Link>{platformIcon}</Link>
         <Link>{game.genre}</Link>
       </div>
-
     </article>
   );
 }

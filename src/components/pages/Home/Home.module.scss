@@ -1,0 +1,21 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+
+  .hero {
+    text-decoration: line-through;
+  }
+
+  .ranking {
+    background-color: aqua;
+
+    .header {
+      background-color: green;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 1rem;
+    }
+  }
+}

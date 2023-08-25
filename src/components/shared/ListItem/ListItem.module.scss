@@ -1,7 +1,7 @@
 @use '../../../assets/styles/variables';
 
 .list_item {
-  max-width: 288px;
+  max-width: 300px;
   border-radius: 25px;
 
   background-color: red;
@@ -13,7 +13,6 @@
   .content {
     padding: 0.5rem;
     height: 8rem;
-    // background-color: aqua;
 
     display: flex;
     flex-direction: column;
@@ -42,5 +41,18 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+
+    a {
+      border: 1px solid green;
+      border-radius: 15px;
+    }
+
+    a:nth-of-type(1) {
+      padding: 0.8rem;
+    }
+
+    a:nth-of-type(2) {
+      padding: 0.5rem;
+    }
   }
 }
