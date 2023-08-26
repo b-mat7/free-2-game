@@ -1,0 +1,35 @@
+img {
+  border-radius: 25px;
+}
+
+.content {
+  padding: 0.5rem;
+  background-color: red;
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  .overview,
+  .about {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+
+    .facts {
+      display: flex;
+      column-gap: 3rem;
+    }
+
+    .links {
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+
+  .developer {
+    display: flex;
+    column-gap: 3rem;
+  }
+}
