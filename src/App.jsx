@@ -1,8 +1,9 @@
 import { Routes, Route } from 'react-router-dom'
 
-import './App.scss'
 import Home from './components/pages/Home/Home'
+import GameDetails from './components/pages/GameDetails/GameDetails'
 
+import './App.scss'
 
 // import reactLogo from './assets/images/react.svg'
 function App() {
@@ -11,6 +12,7 @@ function App() {
     <main>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/details/:id" element={<GameDetails />} />
       </Routes>
 
 

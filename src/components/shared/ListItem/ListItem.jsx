@@ -20,6 +20,7 @@ const ListItem = ({ game }) => {
       </div>
       <div className={styles.details}>
         <button>Show Details</button>
+        <Link to={`/details/${game.id}`}>Show Details</Link>
       </div>
       <div className={styles.info}>
         <Link>{platformIcon}</Link>
