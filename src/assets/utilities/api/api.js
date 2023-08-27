@@ -1,8 +1,5 @@
 "use strict"
 
-// loki
-// 1497722$Rapidfree
-
 const apiLink = "https://free-to-play-games-database.p.rapidapi.com/api/"
 
 const apiKey = "b7770ff011mshfecfb8d0a58a979p14ff5ejsnc2a8cb64b59f"
