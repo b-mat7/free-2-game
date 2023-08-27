@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import { getGamesByFilter } from '../../../assets/utilities/api/api';
+import { getGamesByFilter ,getGamesDetailsbyFilter} from '../../../assets/utilities/api/api';
 
 import ListItem from '../../shared/ListItem/ListItem';
 
@@ -24,6 +24,29 @@ const Home = () => {
         setTopBrowserGames(gamesDataArray[2].slice(0, 4))
       })
   }, [])
+
+  // useEffect(() => {
+  //   getGamesDetailsbyFilter("games?platform=browser")
+  //     .then((gamesDataArray) => {
+  //       console.log(gamesDataArray.slice(0, 4))
+  //       setTopBrowserGames(gamesDataArray.slice(0, 4))
+  //     })
+  // }, [])
+
+  // useEffect(() => {
+  //   Promise.all([
+  //     getGamesDetailsbyFilter("games?sort-by=release-date"),
+  //     getGamesDetailsbyFilter("games?platform=pc"),
+  //     getGamesDetailsbyFilter("games?platform=browser")
+  //   ])
+  //     .then((gamesDataArray) => {
+  //       console.log(gamesDataArray)
+  //       setTopRecentlyAdded(gamesDataArray[0].slice(0, 4))
+  //       setTopPcGames(gamesDataArray[1].slice(0, 4))
+  //       setTopBrowserGames(gamesDataArray[2].slice(0, 4))
+  //     })
+  // }, [])
+
 
   const currentMonth = new Date().toLocaleString("en-US", { month: "long", year: "numeric" });
 
