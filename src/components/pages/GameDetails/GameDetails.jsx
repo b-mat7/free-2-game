@@ -1,19 +1,34 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
+import { dataDetailItem } from '../../../assets/utilities/data/data.js';
+import { getSingleGameDetailsByFilter } from '../../../assets/utilities/api/api';
+
 import DetailItem from '../../shared/DetailItem/DetailItem';
-import {dataDetailItem as gameDetails} from '../../../assets/utilities/data/data.js';
 
 import styles from './GameDetails.module.scss'
 
 
 const GameDetails = () => {
-  const [game, setGame] = useState(gameDetails);
+  const [game, setGame] = useState(dataDetailItem);
+  // const [game, setGame] = useState({});
 
-  const gameID = useParams().id;
+  const [isLoading, setIsLoading] = useState(true);
 
-  //fetch() details + (setGame(data)) via gameID
-  
+  const gameId = useParams().id;
+
+  useEffect(() => {
+    getSingleGameDetailsByFilter(`game?id=${gameId}`)
+      .then((gameData) => {
+        setGame(gameData);
+        setIsLoading(false);
+      })
+  }, [])
+
+  // if(isLoading) {
+  //   return <p>Loading...</p>
+  // }
+
   return (
     <section>
       <DetailItem

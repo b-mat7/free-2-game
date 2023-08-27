@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 
-import { getGamesByFilter ,getGamesDetailsbyFilter} from '../../../assets/utilities/api/api';
+import { getGamesByFilter, getGamesDetailsbyFilter } from '../../../assets/utilities/api/api';
+import { dataListItems } from '../../../assets/utilities/data/data';
 
 import ListItem from '../../shared/ListItem/ListItem';
 
@@ -8,32 +9,30 @@ import gamesGridStyles from '../../../modules/GamesGrid.module.scss'
 import styles from './Home.module.scss'
 
 const Home = () => {
-  const [topRecentlyAdded, setTopRecentlyAdded] = useState([]);
+  const [topRecentlyAdded, setTopRecentlyAdded] = useState(dataListItems);
+  // const [topRecentlyAdded, setTopRecentlyAdded] = useState([]);
   const [topPcGames, setTopPcGames] = useState([]);
   const [topBrowserGames, setTopBrowserGames] = useState([]);
 
-  useEffect(() => {
-    Promise.all([
-      getGamesByFilter("games?sort-by=release-date"),
-      getGamesByFilter("games?platform=pc"),
-      getGamesByFilter("games?platform=browser")
-    ])
-      .then((gamesDataArray) => {
-        setTopRecentlyAdded(gamesDataArray[0].slice(0, 4))
-        setTopPcGames(gamesDataArray[1].slice(0, 4))
-        setTopBrowserGames(gamesDataArray[2].slice(0, 4))
-      })
-  }, [])
+  const [isLoading, setIsLoading] = useState(true);
 
   // useEffect(() => {
-  //   getGamesDetailsbyFilter("games?platform=browser")
+  //   setIsLoading(true);
+  //   Promise.all([
+  //     getGamesByFilter("games?sort-by=release-date"),
+  //     getGamesByFilter("games?platform=pc"),
+  //     getGamesByFilter("games?platform=browser")
+  //   ])
   //     .then((gamesDataArray) => {
-  //       console.log(gamesDataArray.slice(0, 4))
-  //       setTopBrowserGames(gamesDataArray.slice(0, 4))
+  //       setTopRecentlyAdded(gamesDataArray[0].slice(0, 4));
+  //       setTopPcGames(gamesDataArray[1].slice(0, 4));
+  //       setTopBrowserGames(gamesDataArray[2].slice(0, 4));
+  //       setIsLoading(false);
   //     })
   // }, [])
 
   // useEffect(() => {
+  //   setIsLoading(true);
   //   Promise.all([
   //     getGamesDetailsbyFilter("games?sort-by=release-date"),
   //     getGamesDetailsbyFilter("games?platform=pc"),
@@ -41,12 +40,16 @@ const Home = () => {
   //   ])
   //     .then((gamesDataArray) => {
   //       console.log(gamesDataArray)
-  //       setTopRecentlyAdded(gamesDataArray[0].slice(0, 4))
-  //       setTopPcGames(gamesDataArray[1].slice(0, 4))
-  //       setTopBrowserGames(gamesDataArray[2].slice(0, 4))
+  //       setTopRecentlyAdded(gamesDataArray[0].slice(0, 4));
+  //       setTopPcGames(gamesDataArray[1].slice(0, 4));
+  //       setTopBrowserGames(gamesDataArray[2].slice(0, 4));
+  //       setIsLoading(false);
   //     })
   // }, [])
 
+  // if(isLoading) {
+  //   return <p>Loading...</p>
+  // }
 
   const currentMonth = new Date().toLocaleString("en-US", { month: "long", year: "numeric" });
 

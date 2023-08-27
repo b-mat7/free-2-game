@@ -41,3 +41,12 @@ export const getGamesDetailsbyFilter = (filter) => {
     })
     .catch((error) => console.error(error.message));
 };
+
+export const getSingleGameDetailsByFilter = (filter) => {
+  return fetch(`${apiLink}${filter}`, options)
+    .then((response) => {
+      if (!response.ok) throw new Error(`Fetch games failed / ${response.statusText}`);
+      return response.json();
+    })
+    .catch((error) => console.error(error.message));
+};

@@ -2,7 +2,6 @@ import detailGridStyles from '../../../modules/DetailGrid.module.scss'
 import styles from './DetailItem.module.scss'
 
 const DetailItem = ({ game }) => {
-
   return (
     <article className={styles.details_item}>
       <div className={styles.hero}>
@@ -33,10 +32,10 @@ const DetailItem = ({ game }) => {
             <p>{game.description}</p>
           </div>
         </div>
-        {/* Abfrage ob beide screens da mit (p1 && p2) && <div> */}
+        {/* Abfrage ob beide screenshots da prüfen */}
         <div className={detailGridStyles.element_wrapper}>
-          <img src={game.screenshots[1].image}></img>
-          <img src={game.screenshots[2].image}></img>
+          <img src={game?.screenshots[1].image}></img>
+          <img src={game?.screenshots[2].image}></img>
         </div>
         <div className={detailGridStyles.element_wrapper}>
           <div>
@@ -54,15 +53,16 @@ const DetailItem = ({ game }) => {
               </div>
             </div>
           </div>
-          {/* Abfrage ob platform !== Browser && <div> */}
-          <div className={styles.system}>
-            <h3>Minimum System Requirements</h3>
-            <p>{game.minimum_system_requirements.os}</p>
-            <p>{game.minimum_system_requirements.processor}</p>
-            <p>{game.minimum_system_requirements.graphics}</p>
-            <p>{game.minimum_system_requirements.memory}</p>
-            <p>{game.minimum_system_requirements.storage}</p>
-          </div>
+          {game.platform !== "Web Browser" &&
+            <div className={styles.system}>
+              <h3>Minimum System Requirements</h3>
+              <p>{game.minimum_system_requirements.os}</p>
+              <p>{game.minimum_system_requirements.processor}</p>
+              <p>{game.minimum_system_requirements.graphics}</p>
+              <p>{game.minimum_system_requirements.memory}</p>
+              <p>{game.minimum_system_requirements.storage}</p>
+            </div>
+          }
         </div>
       </div>
     </article>

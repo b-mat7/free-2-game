@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
-import iconWindows from '../../../assets/images/iconWindows.svg'
-import iconBrowser from '../../../assets/images/iconBrowser.svg'
+import iconWindows from '../../../assets/images/icon_Windows.svg'
+import iconBrowser from '../../../assets/images/icon_Browser.svg'
 
 import styles from './ListItem.module.scss'
 

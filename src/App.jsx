@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
 
+import SearchBar from './components/shared/SearchBar/SearchBar'
 import Home from './components/pages/Home/Home'
 import GameDetails from './components/pages/GameDetails/GameDetails'
 
@@ -10,6 +11,7 @@ function App() {
 
   return (
     <main>
+      <SearchBar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/details/:id" element={<GameDetails />} />
