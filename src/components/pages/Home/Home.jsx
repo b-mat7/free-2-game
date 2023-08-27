@@ -1,6 +1,6 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
-import { dataListItems } from '../../../assets/utilities/data/data';
+import { getGamesByFilter } from '../../../assets/utilities/api/api';
 
 import ListItem from '../../shared/ListItem/ListItem';
 
@@ -8,7 +8,37 @@ import gamesGridStyles from '../../../modules/GamesGrid.module.scss'
 import styles from './Home.module.scss'
 
 const Home = () => {
-  const [topRecentlyAdded, setTopRecentlyAdded] = useState(dataListItems.slice(0, 4));
+  const [topRecentlyAdded, setTopRecentlyAdded] = useState([]);
+  const [topPcGames, setTopPcGames] = useState([]);
+  const [topBrowserGames, setTopBrowserGames] = useState([]);
+
+  // useEffect(() => {
+  //   getGamesByFilter("games?sort-by=release-date")
+  //     .then((gamesData) => setTopRecentlyAdded(gamesData.slice(0, 4)))
+  // }, [])
+
+  // useEffect(() => {
+  //   getGamesByFilter("games?platform=pc")
+  //     .then((gamesData) => setTopPcGames(gamesData.slice(0, 4)))
+  // })
+
+  // useEffect(() => {
+  //   getGamesByFilter("games?platform=browser")
+  //     .then((gamesData) => setTopBrowserGames(gamesData.slice(0, 4)))
+  // })
+
+  // useEffect(() => {
+  //   Promise.all([
+  //     getGamesByFilter("games?sort-by=release-date"),
+  //     getGamesByFilter("games?platform=pc"),
+  //     getGamesByFilter("games?platform=browser")
+  //   ])
+  //     .then((gamesDataArray) => {
+  //       setTopRecentlyAdded(gamesDataArray[0].slice(0, 4))
+  //       setTopPcGames(gamesDataArray[1].slice(0, 4))
+  //       setTopBrowserGames(gamesDataArray[2].slice(0, 4))
+  //     })
+  // }, [])
 
   const currentMonth = new Date().toLocaleString("en-US", { month: "long", year: "numeric" });
 
@@ -38,7 +68,7 @@ const Home = () => {
           <button>Show More</button>
         </div>
         <div className={gamesGridStyles.list_wrapper}>
-          {topRecentlyAdded.map((game) => (
+          {topPcGames.map((game) => (
             <ListItem
               key={game.id}
               game={game}
@@ -52,7 +82,7 @@ const Home = () => {
           <button>Show More</button>
         </div>
         <div className={gamesGridStyles.list_wrapper}>
-          {topRecentlyAdded.map((game) => (
+          {topBrowserGames.map((game) => (
             <ListItem
               key={game.id}
               game={game}

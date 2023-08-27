@@ -6,10 +6,10 @@ import iconBrowser from '../../../assets/images/iconBrowser.svg'
 import styles from './ListItem.module.scss'
 
 const ListItem = ({ game }) => {
-
   const platformIcon = (
-    <img src={game.platform === "Web Browser" ? iconBrowser : iconWindows}></img>)
-  return (
+    <img src={game.platform === "Web Browser" ? iconBrowser : iconWindows}></img>);
+  
+    return (
     <article className={styles.list_item}>
       <div className={styles.hero}>
         <img src={game.thumbnail} alt="game-thumbnail" />
