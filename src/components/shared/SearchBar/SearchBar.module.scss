@@ -17,12 +17,18 @@
     font-size: 1.5rem;
     font-weight: 700;
     column-gap: 0.5rem;
+
+    span {
+      font-family: var.$font-family_accent;
+      color: var.$color_font_white;
+      text-shadow: var.$color_primary 1px 2px 10px;
+    }
   }
 
   .search {
 
     input {
-      background-color: var.$color_search;
+      background-color: var.$color_accent_bluelight;
       background-image: url("../../../assets/images/icon_search.svg");
       background-repeat: no-repeat;
       background-position: right 10px center;
@@ -30,9 +36,13 @@
       border-style: none;
       height: 40px;
       min-width: 300px;
-      padding-left: 10px;
-      padding-right: 40px;
+      padding-left: 0.625rem;
+      padding-right: 2.5rem;
       text-align: center;
+      color: var.$color_font_white;
+      font-size: 1.5rem;
+      font-weight: 600;
+      font-family: var.$font-family_accent;
     }
   }
 }
@@ -53,7 +63,8 @@
   .searchbar {
     
     .search input {
-      min-width: 200px;
+      min-width: 250px;
+      font-size: 1rem;
     }
   }
 }

@@ -4,12 +4,26 @@
   border-radius: 25px;
 }
 
+.details_item h3 {
+  font-family: var.$font-family_accent;
+}
+
+.hero img {
+  object-fit: cover;
+  object-position: center;
+  border-radius: 5px;
+}
+
 .content {
-  padding: 0.5rem;
-  background-color: red;
+  padding: 0.5rem 2rem;
+  border-radius: 5px;
+  background-color: var.$color_accent_bluedark;
 
   h1 {
     font-size: 3rem;
+    padding: 1rem 0;
+    font-family: var.$font-family_accent;
+    color: var.$color_font_white;
   }
 
   .overview,

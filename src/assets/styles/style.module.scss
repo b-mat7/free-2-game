@@ -13,7 +13,13 @@
 #root {
   max-width: var.$root_width_desktop;
   margin: 0 auto;
-  padding-top: 64px;
+  padding: 4rem 0;
 
   //   @include mixins.centered();
+}
+
+@media screen and (max-width: var.$breakpoint_xxs) {
+  #root {
+    padding-bottom: 0;
+  }
 }

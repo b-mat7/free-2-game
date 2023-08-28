@@ -4,16 +4,6 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   column-gap: 5rem;
-  row-gap: 1.5rem;
-  padding: 1.5rem 0;
-}
-
-@media screen and (max-width: var.$breakpoint_xs) {
-  .element_wrapper {
-    // row-gap vs padding
-  }
-}
-
-@media screen and (max-width: var.$breakpoint_xxs) {
-  
+  row-gap: 2.5rem;
+  padding: 1.25rem 0;
 }

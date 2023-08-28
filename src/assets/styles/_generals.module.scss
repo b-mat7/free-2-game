@@ -9,10 +9,11 @@
 // ==================================
 
 :root {
-  // font-family: var.$font-family_primary;
+  font-family: var.$font-family_primary;
+  font-weight: 200;
+  color: var.$color_font_smoke;
   
-//   line-height: var.$line-height_primary;
-  color: var.$color_font;
+  // line-height: var.$line-height_primary;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -21,11 +22,11 @@
   -webkit-text-size-adjust: 100%;
   // color-scheme: light dark;
 
-  background-color: var.$color_root_background;
+  // background-color: var.$color_primary;
 
-  // background: url(var.$root_background_image);
-  // background-size: cover;
-  // background-position: center;
-  // background-repeat: no-repeat;
-  // background-attachment: fixed;
+  background: url(var.$root_background_image);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }

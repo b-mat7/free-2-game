@@ -3,8 +3,7 @@
 .list_item {
   max-width: 300px;
   border-radius: 25px;
-
-  background-color: var.$color_card;
+  background-color: var.$color_accent_bluedark;
 
   .hero img {
     border-radius: 25px;
@@ -17,6 +16,10 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
+
+    h3 {
+      font-family: var.$font-family_accent;
+    }
 
     p {
       padding: 0.3rem 0;
@@ -36,16 +39,16 @@
   }
 
   .info {
-    border-top: 1px solid var.$color_accent2;
+    border-top: 1px solid var.$color_accent_greenlight;
     padding: 0.5rem;
     display: flex;
     justify-content: space-around;
     align-items: center;
 
     a:hover {
-      // border: 1px solid var.$color_accent2;;
+      // border: 1px solid var.$color_accent_greenlight;
       // border-radius: 15px;
-      // border-bottom: 1px solid var.$color_accent2;;
+      // border-bottom: 1px solid var.$color_accent_greenlight;
     }
 
     a:nth-of-type(1) {
