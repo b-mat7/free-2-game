@@ -10,23 +10,23 @@ import styles from './Home.module.scss'
 
 const Home = () => {
   // const [topRecentlyAdded, setTopRecentlyAdded] = useState(dataListItems);
-  const [topRecentlyAdded, setTopRecentlyAdded] = useState([]);
   const [topPcGames, setTopPcGames] = useState([]);
   const [topBrowserGames, setTopBrowserGames] = useState([]);
+  const [topRecentlyAdded, setTopRecentlyAdded] = useState([]);
 
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     setIsLoading(true);
     Promise.all([
-      getGamesByFilter("games?sort-by=release-date"),
       getGamesByFilter("games?platform=pc"),
-      getGamesByFilter("games?platform=browser")
+      getGamesByFilter("games?platform=browser"),
+      getGamesByFilter("games?sort-by=release-date")
     ])
       .then((gamesDataArray) => {
-        setTopRecentlyAdded(gamesDataArray[0].slice(0, 4));
-        setTopPcGames(gamesDataArray[1].slice(0, 4));
-        setTopBrowserGames(gamesDataArray[2].slice(0, 4));
+        setTopPcGames(gamesDataArray[0].slice(0, 4));
+        setTopBrowserGames(gamesDataArray[1].slice(0, 4));
+        setTopRecentlyAdded(gamesDataArray[2].slice(0, 4));
         setIsLoading(false);
       })
   }, [])
@@ -47,7 +47,7 @@ const Home = () => {
   //     })
   // }, [])
 
-  if(isLoading) {
+  if (isLoading) {
     return <p>Loading...</p>
   }
 
@@ -57,25 +57,10 @@ const Home = () => {
     <section className={styles.home}>
       <div className={styles.hero}>
         <h1>Find & track the best free-to-play games</h1>
-        {/* <img src="" alt="" /> */}
       </div>
       <section className={styles.ranking}>
         <div className={styles.header}>
-          <h2>Recently Published</h2>
-          <button>Show More</button>
-        </div>
-        <div className={gamesGridStyles.list_wrapper}>
-          {topRecentlyAdded.map((game) => (
-            <ListItem
-              key={game.id}
-              game={game}
-            />
-          ))}
-        </div>
-      </section>
-      <section className={styles.ranking}>
-        <div className={styles.header}>
-          <h2>Top PC-Games in {currentMonth}</h2>
+          <h2>Top PC-Games {currentMonth}</h2>
           <button>Show More</button>
         </div>
         <div className={gamesGridStyles.list_wrapper}>
@@ -89,11 +74,25 @@ const Home = () => {
       </section>
       <section className={styles.ranking}>
         <div className={styles.header}>
-          <h2>Top Browser-Games in {currentMonth}</h2>
+          <h2>Top Browser-Games {currentMonth}</h2>
           <button>Show More</button>
         </div>
         <div className={gamesGridStyles.list_wrapper}>
           {topBrowserGames.map((game) => (
+            <ListItem
+              key={game.id}
+              game={game}
+            />
+          ))}
+        </div>
+      </section>
+      <section className={styles.ranking}>
+        <div className={styles.header}>
+          <h2>Recently Published</h2>
+          <button>Show More</button>
+        </div>
+        <div className={gamesGridStyles.list_wrapper}>
+          {topRecentlyAdded.map((game) => (
             <ListItem
               key={game.id}
               game={game}

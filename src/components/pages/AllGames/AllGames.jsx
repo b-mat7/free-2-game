@@ -15,12 +15,10 @@ const AllGames = () => {
     <section className={styles.allgames}>
       <div className={styles.hero}>
         <h1>All games</h1>
-        {/* <img src="" alt="" /> */}
       </div>
       <div className={styles.controls}>
 
       </div>
-      {/* <div className={styles.gameslist}> */}
       <div className={gamesGridStyles.list_wrapper}>
         {games.map((game) => {
           return (

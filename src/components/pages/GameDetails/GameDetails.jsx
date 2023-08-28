@@ -25,7 +25,7 @@ const GameDetails = () => {
       })
   }, [])
 
-  if(isLoading) {
+  if (isLoading) {
     return <p>Loading...</p>
   }
 

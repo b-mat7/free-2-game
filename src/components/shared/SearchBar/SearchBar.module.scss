@@ -42,16 +42,20 @@
 @media screen and (max-width: var.$breakpoint_xs) {
   .searchbar {
     padding: 0 1rem;
+
+    .logo {
+      span {
+        display: none;
+      }
+    }
   }
 }
 
 @media screen and (max-width: var.$breakpoint_xxs) {
   .searchbar {
-    .logo {
-
-      span {
-        display: none;
-      }
+    
+    .search input {
+      min-width: 200px;
     }
   }
 }

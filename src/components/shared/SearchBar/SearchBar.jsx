@@ -16,7 +16,7 @@ const SearchBar = () => {
     <section className={styles.searchbar}>
       <Link to={"/"}>
         <div className={styles.logo}>
-          <img src={logo} alt="logo"/>
+          <img src={logo} alt="logo" />
           <span>Free2Game</span>
         </div>
       </Link>

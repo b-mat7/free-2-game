@@ -42,17 +42,20 @@
     justify-content: space-around;
     align-items: center;
 
-    a {
-      border: 1px solid green;
-      border-radius: 15px;
+    a:hover {
+      // border: 1px solid green;
+      // border-radius: 15px;
+      // border-bottom: 1px solid green;
     }
 
     a:nth-of-type(1) {
       padding: 0.8rem;
+      cursor: default;
     }
 
     a:nth-of-type(2) {
       padding: 0.5rem;
+      cursor: default;
     }
   }
 }

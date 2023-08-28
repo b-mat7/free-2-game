@@ -4,9 +4,13 @@
   row-gap: 2rem;
 
   .hero {
+    background-image: url("../../../assets/images/image_hero1.jpeg");
+    background-size: cover;
+    background-position: center;
 
     h1 {
       text-transform: uppercase;
+      margin: 350px 0 108px 56px;
     }
   }
 
