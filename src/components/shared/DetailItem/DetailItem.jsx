@@ -32,11 +32,12 @@ const DetailItem = ({ game }) => {
             <p>{game.description}</p>
           </div>
         </div>
-        {/* Abfrage ob beide screenshots da prüfen */}
-        <div className={detailGridStyles.element_wrapper}>
-          <img src={game?.screenshots[1].image}></img>
-          <img src={game?.screenshots[2].image}></img>
-        </div>
+        {game.screenshots.length >= 3 &&
+          <div className={detailGridStyles.element_wrapper}>
+            <img src={game?.screenshots[1].image}></img>
+            <img src={game?.screenshots[2].image}></img>
+          </div>
+        }
         <div className={detailGridStyles.element_wrapper}>
           <div>
             <h3>Addtl. Information</h3>
@@ -53,14 +54,18 @@ const DetailItem = ({ game }) => {
               </div>
             </div>
           </div>
-          {game.platform !== "Web Browser" &&
-            <div className={styles.system}>
+          {game.platform !== "Web Browser"
+            ? <div className={styles.system}>
               <h3>Minimum System Requirements</h3>
               <p>{game.minimum_system_requirements.os}</p>
               <p>{game.minimum_system_requirements.processor}</p>
               <p>{game.minimum_system_requirements.graphics}</p>
               <p>{game.minimum_system_requirements.memory}</p>
               <p>{game.minimum_system_requirements.storage}</p>
+            </div>
+            : <div className={styles.system}>
+              <h3>Minimum System Requirements</h3>
+              <p>Modern, up-tp-date web browser</p>
             </div>
           }
         </div>

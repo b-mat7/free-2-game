@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 
 import { getGamesByFilter, getGamesDetailsbyFilter } from '../../../assets/utilities/api/api';
-import { dataListItems } from '../../../assets/utilities/data/data';
+// import { dataListItems } from '../../../assets/utilities/data/data';
 
 import ListItem from '../../shared/ListItem/ListItem';
 
@@ -9,27 +9,27 @@ import gamesGridStyles from '../../../modules/GamesGrid.module.scss'
 import styles from './Home.module.scss'
 
 const Home = () => {
-  const [topRecentlyAdded, setTopRecentlyAdded] = useState(dataListItems);
-  // const [topRecentlyAdded, setTopRecentlyAdded] = useState([]);
+  // const [topRecentlyAdded, setTopRecentlyAdded] = useState(dataListItems);
+  const [topRecentlyAdded, setTopRecentlyAdded] = useState([]);
   const [topPcGames, setTopPcGames] = useState([]);
   const [topBrowserGames, setTopBrowserGames] = useState([]);
 
   const [isLoading, setIsLoading] = useState(true);
 
-  // useEffect(() => {
-  //   setIsLoading(true);
-  //   Promise.all([
-  //     getGamesByFilter("games?sort-by=release-date"),
-  //     getGamesByFilter("games?platform=pc"),
-  //     getGamesByFilter("games?platform=browser")
-  //   ])
-  //     .then((gamesDataArray) => {
-  //       setTopRecentlyAdded(gamesDataArray[0].slice(0, 4));
-  //       setTopPcGames(gamesDataArray[1].slice(0, 4));
-  //       setTopBrowserGames(gamesDataArray[2].slice(0, 4));
-  //       setIsLoading(false);
-  //     })
-  // }, [])
+  useEffect(() => {
+    setIsLoading(true);
+    Promise.all([
+      getGamesByFilter("games?sort-by=release-date"),
+      getGamesByFilter("games?platform=pc"),
+      getGamesByFilter("games?platform=browser")
+    ])
+      .then((gamesDataArray) => {
+        setTopRecentlyAdded(gamesDataArray[0].slice(0, 4));
+        setTopPcGames(gamesDataArray[1].slice(0, 4));
+        setTopBrowserGames(gamesDataArray[2].slice(0, 4));
+        setIsLoading(false);
+      })
+  }, [])
 
   // useEffect(() => {
   //   setIsLoading(true);
@@ -47,9 +47,9 @@ const Home = () => {
   //     })
   // }, [])
 
-  // if(isLoading) {
-  //   return <p>Loading...</p>
-  // }
+  if(isLoading) {
+    return <p>Loading...</p>
+  }
 
   const currentMonth = new Date().toLocaleString("en-US", { month: "long", year: "numeric" });
 
