@@ -1,12 +1,10 @@
 import { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
+import logo from '../../../assets/images/icon_logo1.svg'
 import styles from './SearchBar.module.scss'
 
-// responsive mobile: padding weg, nur Logo
-
 const SearchBar = () => {
-
 
   const location = useLocation().pathname;
 
@@ -18,7 +16,7 @@ const SearchBar = () => {
     <section className={styles.searchbar}>
       <Link to={"/"}>
         <div className={styles.logo}>
-          {/* <img src={} alt="logo"/> */}
+          <img src={logo} alt="logo"/>
           <span>Free2Game</span>
         </div>
       </Link>

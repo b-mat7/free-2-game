@@ -56,7 +56,7 @@ const Home = () => {
   return (
     <section className={styles.home}>
       <div className={styles.hero}>
-        <h1>Find & track the best...</h1>
+        <h1>Find & track the best free-to-play games</h1>
         {/* <img src="" alt="" /> */}
       </div>
       <section className={styles.ranking}>

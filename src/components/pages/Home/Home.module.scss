@@ -4,7 +4,10 @@
   row-gap: 2rem;
 
   .hero {
-    text-decoration: line-through;
+
+    h1 {
+      text-transform: uppercase;
+    }
   }
 
   .ranking {

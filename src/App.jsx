@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom'
 
 import SearchBar from './components/shared/SearchBar/SearchBar'
 import Home from './components/pages/Home/Home'
+import AllGames from './components/pages/AllGames/AllGames'
 import GameDetails from './components/pages/GameDetails/GameDetails'
 
 import './App.scss'
@@ -14,6 +15,7 @@ function App() {
       <SearchBar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/allgames" element={<AllGames />} />
         <Route path="/details/:id" element={<GameDetails />} />
       </Routes>
 
