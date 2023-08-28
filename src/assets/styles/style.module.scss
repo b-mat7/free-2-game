@@ -10,11 +10,10 @@
 //           APP STYLES
 // ==================================
 
-main {
+#root {
   max-width: var.$root_width_desktop;
   margin: 0 auto;
   padding-top: 64px;
 
-  //
-  background-color: blue;
+  //   @include mixins.centered();
 }

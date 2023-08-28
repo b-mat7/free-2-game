@@ -12,16 +12,20 @@
   // font-family: var.$font-family_primary;
   
 //   line-height: var.$line-height_primary;
-  color: var.$color_primary;
+  color: var.$color_font;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-  color-scheme: light dark;
+  // color-scheme: light dark;
 
   background-color: var.$color_root_background;
 
-//   @include mixins.centered();
+  // background: url(var.$root_background_image);
+  // background-size: cover;
+  // background-position: center;
+  // background-repeat: no-repeat;
+  // background-attachment: fixed;
 }

@@ -2,8 +2,10 @@
 
 const apiLink = "https://free-to-play-games-database.p.rapidapi.com/api/"
 
-const apiKey = "b7770ff011mshfecfb8d0a58a979p14ff5ejsnc2a8cb64b59f"
-const apiHost = "free-to-play-games-database.p.rapidapi.com"
+// const apiKey = "b7770ff011mshfecfb8d0a58a979p14ff5ejsnc2a8cb64b59f"
+const apiKey = import.meta.env.VITE_API_KEY;
+// const apiHost = "free-to-play-games-database.p.rapidapi.com"
+const apiHost = import.meta.env.VITE_API_HOST;
 
 const options = {
   method: "GET",

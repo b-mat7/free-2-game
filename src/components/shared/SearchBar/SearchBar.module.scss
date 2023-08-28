@@ -11,8 +11,6 @@
   align-items: center;
   padding: 0 2rem;
 
-  background-color: purple;
-
   .logo {
     display: flex;
     text-transform: uppercase;
@@ -24,7 +22,7 @@
   .search {
 
     input {
-      background-color: #375470;
+      background-color: var.$color_search;
       background-image: url("../../../assets/images/icon_search.svg");
       background-repeat: no-repeat;
       background-position: right 10px center;
