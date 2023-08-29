@@ -8,8 +8,8 @@
   max-width: var.$root_width_desktop;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 0 2rem;
+  // align-items: center;
+  padding: 0.8rem 2rem;
 
   .logo {
     display: flex;
@@ -27,7 +27,7 @@
 
   .search {
 
-    input {
+    .search_input {
       background-color: var.$color_accent_bluelight;
       background-image: url("../../../assets/images/icon_search.svg");
       background-repeat: no-repeat;
@@ -43,6 +43,15 @@
       font-size: 1.5rem;
       font-weight: 600;
       font-family: var.$font-family_accent;
+    }
+
+    .search_output {
+      margin-top: 5px;
+      display: flex;
+      flex-direction: column;
+      row-gap: 0.5rem;
+      max-height: 450px;
+      overflow-y: auto;
     }
   }
 }

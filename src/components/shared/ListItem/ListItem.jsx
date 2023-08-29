@@ -11,9 +11,11 @@ const ListItem = ({ game }) => {
 
   return (
     <article className={styles.list_item}>
-      <div className={styles.hero}>
-        <img src={game.thumbnail} alt="game-thumbnail" />
-      </div>
+      <Link to={`/details/${game.id}`}>
+        <div className={styles.hero}>
+          <img src={game.thumbnail} alt="game-thumbnail" />
+        </div>
+      </Link>
       <div className={styles.content}>
         <h3>{game.title}</h3>
         <p>{game.short_description}</p>

@@ -1,0 +1,22 @@
+@use '../../../assets/styles/variables.module' as var;
+
+.search_item {
+  max-width: 300px;
+  padding: 1rem;
+  background-color: var.$color_accent_bluedark;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 15px;
+
+  .title {
+    font-family: var.$font-family_accent;
+    color: var.$color_font_smoke;
+    font-weight: 400;
+  }
+
+  .image {
+    max-width: 100px;
+    border-radius: 15px;
+  }
+}
