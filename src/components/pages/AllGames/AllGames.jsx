@@ -11,6 +11,12 @@ const AllGames = () => {
 
   const [games, setGames] = useState(dataListItems);
 
+  const [isLoading, setIsLoading] = useState(true);
+
+  if (isLoading) {
+    return <p>Loading...</p>
+  }
+
   return (
     <section className={styles.allgames}>
       <div className={styles.hero}>

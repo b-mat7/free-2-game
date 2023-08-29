@@ -2,7 +2,8 @@ import { Link } from 'react-router-dom';
 
 import styles from './SearchItem.module.scss'
 
-const SearchItem = ({game}) => {
+const SearchItem = ({ game }) => {
+
   return (
     <Link to={`/details/${game.id}`}>
       <article className={styles.search_item}>

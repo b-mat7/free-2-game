@@ -8,7 +8,6 @@
   max-width: var.$root_width_desktop;
   display: flex;
   justify-content: space-between;
-  // align-items: center;
   padding: 0.8rem 2rem;
 
   .logo {
@@ -50,7 +49,7 @@
       display: flex;
       flex-direction: column;
       row-gap: 0.5rem;
-      max-height: 450px;
+      max-height: 375px;
       overflow-y: auto;
     }
   }
@@ -58,11 +57,17 @@
 
 @media screen and (max-width: var.$breakpoint_xs) {
   .searchbar {
-    padding: 0 1rem;
+    padding: 0.8rem 1rem;
 
     .logo {
       span {
         display: none;
+      }
+    }
+
+    .search {
+      .search_output {
+        max-height: 280px;
       }
     }
   }
@@ -71,9 +76,11 @@
 @media screen and (max-width: var.$breakpoint_xxs) {
   .searchbar {
     
-    .search input {
-      min-width: 250px;
-      font-size: 1rem;
+    .search {
+      .search input {
+        min-width: 250px;
+        font-size: 1rem;
+      }
     }
   }
 }

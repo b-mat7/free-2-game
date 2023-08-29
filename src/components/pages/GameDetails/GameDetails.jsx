@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-// import { dataDetailItem } from '../../../assets/utilities/data/data.js';
 import { getSingleGameDetailsByFilter } from '../../../assets/utilities/api/api';
 
 import DetailItem from '../../shared/DetailItem/DetailItem';
@@ -10,7 +9,6 @@ import styles from './GameDetails.module.scss'
 
 
 const GameDetails = () => {
-  // const [game, setGame] = useState(dataDetailItem);
   const [game, setGame] = useState({});
 
   const [isLoading, setIsLoading] = useState(true);
@@ -23,7 +21,7 @@ const GameDetails = () => {
         setGame(gameData);
         setIsLoading(false);
       })
-  }, [])
+  }, [gameId])
 
   if (isLoading) {
     return <p>Loading...</p>

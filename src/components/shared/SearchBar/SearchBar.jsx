@@ -17,19 +17,19 @@ const SearchBar = () => {
 
   useEffect(() => {
     setSearchInput("")
-    // setGames([])
-    // setGamesFound([])
   }, [location]);
 
   useEffect(() => {
     getGamesByFilter("games")
-      .then((gamesData) => {
-        setGames(gamesData)
-        const result = [...games].filter((game) => {
-          return game.title.toLowerCase().includes(searchInput.toLowerCase());
-        });
-        setGamesFound(result)
-      });
+      .then((gamesData) => setGames(gamesData))
+  }, []);
+
+  useEffect(() => {
+    const result = [...games].filter((game) => {
+      return game.title.toLowerCase().includes(searchInput.toLowerCase());
+    });
+    setGamesFound(result)
+    if (searchInput === "") setGamesFound([]);
   }, [searchInput]);
 
   return (
@@ -47,7 +47,7 @@ const SearchBar = () => {
           id="search_input"
           className={styles.search_input}
           onChange={(event) => setSearchInput(event.target.value)}
-          value={searchInput} 
+          value={searchInput}
         />
         <div className={styles.search_output}>
           {gamesFound.map((game) => (
