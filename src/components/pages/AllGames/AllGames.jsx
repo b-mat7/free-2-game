@@ -6,6 +6,7 @@ import ListItem from '../../shared/ListItem/ListItem';
 
 import gamesGridStyles from '../../../modules/GamesGrid.module.scss'
 import styles from './AllGames.module.scss'
+import PlatformCollabsible from '../../shared/PlatformCollabsible/PlatformCollabsible';
 
 const AllGames = () => {
 
@@ -13,9 +14,9 @@ const AllGames = () => {
 
   const [isLoading, setIsLoading] = useState(true);
 
-  if (isLoading) {
-    return <p>Loading...</p>
-  }
+  // if (isLoading) {
+  //   return <p>Loading...</p>
+  // }
 
   return (
     <section className={styles.allgames}>
@@ -23,7 +24,9 @@ const AllGames = () => {
         <h1>All games</h1>
       </div>
       <div className={styles.controls}>
-
+        <PlatformCollabsible />
+        <button>Genre</button>
+        <button>Sort by</button>
       </div>
       <div className={gamesGridStyles.list_wrapper}>
         {games.map((game) => {
