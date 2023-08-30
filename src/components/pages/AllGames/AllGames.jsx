@@ -1,22 +1,42 @@
-import { useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 
-import { dataListItems } from '../../../assets/utilities/data/data';
+import { PlatformContext } from '../../../contexts/PlatformContext';
+import { getGamesByFilter } from '../../../assets/utilities/api/api';
 
+import PlatformCollabsible from '../../shared/PlatformCollabsible/PlatformCollabsible';
 import ListItem from '../../shared/ListItem/ListItem';
 
 import gamesGridStyles from '../../../modules/GamesGrid.module.scss'
 import styles from './AllGames.module.scss'
-import PlatformCollabsible from '../../shared/PlatformCollabsible/PlatformCollabsible';
+
 
 const AllGames = () => {
 
-  const [games, setGames] = useState(dataListItems);
+  const [games, setGames] = useState([]);
+  const [filter, setFilter] = useState("");
+
+  const {platform, setPlatfom} = useContext(PlatformContext);
 
   const [isLoading, setIsLoading] = useState(true);
 
-  // if (isLoading) {
-  //   return <p>Loading...</p>
-  // }
+  useEffect(()=> {
+    setFilter(`games?platform=${platform}`)
+  }, [platform])
+
+  useEffect(() => {
+    if (filter !== "") {
+      setIsLoading(true);
+      getGamesByFilter(filter)
+        .then((gamesData) => {
+          setGames(gamesData);
+          setIsLoading(false);
+        })
+    }
+  }, [filter])
+
+  if (isLoading) {
+    return <p>Loading...</p>
+  }
 
   return (
     <section className={styles.allgames}>

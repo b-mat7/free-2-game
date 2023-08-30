@@ -1,4 +1,7 @@
+import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
+
+import { PlatformContext } from './contexts/PlatformContext'
 
 import SearchBar from './components/shared/SearchBar/SearchBar'
 import Home from './components/pages/Home/Home'
@@ -10,15 +13,20 @@ import './App.scss'
 // import reactLogo from './assets/images/react.svg'
 function App() {
 
+  const [platform, setPlatform] = useState("all");
+
   return (
     <main>
-      <SearchBar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/allgames" element={<AllGames />} />
-        <Route path="/details/:id" element={<GameDetails />} />
-      </Routes>
 
+      <PlatformContext.Provider value={{ platform, setPlatform }}>
+        <SearchBar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/allgames" element={<AllGames />} />
+          <Route path="/details/:id" element={<GameDetails />} />
+        </Routes>
+
+      </PlatformContext.Provider>
 
       {/* <div>
         <a href="https://react.dev" target="_blank">

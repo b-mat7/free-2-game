@@ -1,4 +1,3 @@
 import { createContext } from "react";
 
-
-export const PlaformContext = createContext([]);
+export const PlatformContext = createContext("");

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+
 import PlatformCollabsibleItem from '../PlatformCollabsibleItem/PlatformCollabsibleItem';
 
 import styles from './PlatformCollabsible.module.scss'
@@ -21,16 +22,14 @@ const PlatformCollabsible = () => {
     <section className={styles.collabsible} onClick={() => handleClick()}>
       <div className={styles.name}>
         <p>PLATFORM</p>
-        <p className={isCollapsed ? "" : styles.icon}>ICON</p>
+        <p className={isCollapsed ? "" : styles.icon}>VVV</p>
       </div>
       <div>
         {isCollapsed &&
-          platformOptions.map((option, index) => (
-            <PlatformCollabsibleItem
-              key={index}
-              option={option}
-            />
-          ))
+          <PlatformCollabsibleItem
+            options={platformOptions}
+          />
+          // ))
         }
       </div>
     </section>

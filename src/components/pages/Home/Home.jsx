@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 
 import { getGamesByFilter, getGamesDetailsbyFilter } from '../../../assets/utilities/api/api';
-// import { dataListItems } from '../../../assets/utilities/data/data';
 
 import ListItem from '../../shared/ListItem/ListItem';
 
@@ -9,7 +8,6 @@ import gamesGridStyles from '../../../modules/GamesGrid.module.scss'
 import styles from './Home.module.scss'
 
 const Home = () => {
-  // const [topRecentlyAdded, setTopRecentlyAdded] = useState(dataListItems);
   const [topPcGames, setTopPcGames] = useState([]);
   const [topBrowserGames, setTopBrowserGames] = useState([]);
   const [topRecentlyAdded, setTopRecentlyAdded] = useState([]);
