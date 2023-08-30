@@ -12,7 +12,6 @@ const PlatformCollabsibleItem = ({ options }) => {
       {options.map((option) => (
         <article className={styles.collabsible_item} key={option.value}>
           <input
-            className={styles.inputs}
             type="checkbox"
             name={option.value}
             id={option.value}
@@ -21,10 +20,9 @@ const PlatformCollabsibleItem = ({ options }) => {
             checked={platform === option.value}
           />
           <label
-            className={styles.labels}
             htmlFor={option.value}
             value={option.value} >
-            {option.value}
+            {option.label}
           </label>
         </article>
       ))}

@@ -9,7 +9,7 @@ const PlatformCollabsible = () => {
   const [isCollapsed, setIsCollapsed] = useState(true);
 
   const platformOptions = [
-    { label: "All Platform", value: "all" },
+    { label: "All Platforms", value: "all" },
     { label: "Windows (PC)", value: "pc" },
     { label: "Browser (Web)", value: "browser" }
   ];
@@ -22,10 +22,10 @@ const PlatformCollabsible = () => {
     <section className={styles.collabsible} onClick={() => handleClick()}>
       <div className={styles.name}>
         <p>PLATFORM</p>
-        <p className={isCollapsed ? "" : styles.icon}>VVV</p>
+        <p className={isCollapsed ? "" : styles.icon}>V</p>
       </div>
-      <div>
-        {isCollapsed &&
+      <div className={styles.collabsible_items}>
+        {!isCollapsed &&
           <PlatformCollabsibleItem
             options={platformOptions}
           />
