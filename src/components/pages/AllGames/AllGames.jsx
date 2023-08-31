@@ -10,6 +10,7 @@ import { getGamesByFilter } from '../../../assets/utilities/api/api';
 import PlatformCollapsible from '../../shared/PlatformCollapsible/PlatformCollapsible';
 import SortByCollapsible from '../../shared/SortByCollapsible/SortByCollapsible';
 import GenreCollapsible from '../../shared/GenreCollapsible/GenreCollapsible';
+import FilterButtons from '../../shared/FilterButtons/FilterButtons';
 import ListItem from '../../shared/ListItem/ListItem';
 
 import gamesGridStyles from '../../../modules/GamesGrid.module.scss';
@@ -31,7 +32,7 @@ const AllGames = () => {
       setFilter(`games?platform=${platform}&sort-by=${sortBy}`);
     } else {
       const genreString = genre.join(".")
-      setFilter(`filter?platform=${platform}&tag=${genreString}`);
+      setFilter(`filter?platform=${platform}&sort-by=${sortBy}&tag=${genreString}`);
     }
   }, [platform, genre, sortBy])
 
@@ -59,6 +60,10 @@ const AllGames = () => {
         <PlatformCollapsible />
         <GenreCollapsible />
         <SortByCollapsible />
+      </div>
+      {/* <div className={styles.controls_filter_wrapper}> */}
+      <div>
+        <FilterButtons />
       </div>
       <div className={gamesGridStyles.list_wrapper}>
         {games.map((game) => {
