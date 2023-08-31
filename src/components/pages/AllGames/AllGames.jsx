@@ -3,7 +3,7 @@ import { useContext, useEffect, useState } from 'react';
 import { PlatformContext } from '../../../contexts/PlatformContext';
 import { getGamesByFilter } from '../../../assets/utilities/api/api';
 
-import PlatformCollabsible from '../../shared/PlatformCollabsible/PlatformCollabsible';
+import PlatformCollapsible from '../../shared/PlatformCollapsible/PlatformCollapsible';
 import ListItem from '../../shared/ListItem/ListItem';
 
 import gamesGridStyles from '../../../modules/GamesGrid.module.scss'
@@ -44,7 +44,7 @@ const AllGames = () => {
         <h1>All games</h1>
       </div>
       <div className={styles.controls}>
-        <PlatformCollabsible />
+        <PlatformCollapsible />
         <button>Genre</button>
         <button>Sort by</button>
       </div>

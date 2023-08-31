@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
-import PlatformCollabsibleItem from '../PlatformCollabsibleItem/PlatformCollabsibleItem';
+import PlatformCollapsibleItem from '../PlatformCollapsibleItem/PlatformCollapsibleItem';
 
-import styles from './PlatformCollabsible.module.scss'
+import styles from './PlatformCollapsible.module.scss'
 
-const PlatformCollabsible = () => {
+const PlatformCollapsible = () => {
 
   const [isCollapsed, setIsCollapsed] = useState(true);
 
@@ -19,14 +19,14 @@ const PlatformCollabsible = () => {
   }
 
   return (
-    <section className={styles.collabsible} onClick={() => handleClick()}>
+    <section className={styles.collapsible} onClick={() => handleClick()}>
       <div className={styles.name}>
         <p>PLATFORM</p>
         <p className={isCollapsed ? "" : styles.icon}>V</p>
       </div>
-      <div className={styles.collabsible_items}>
+      <div className={styles.collapsible_items}>
         {!isCollapsed &&
-          <PlatformCollabsibleItem
+          <PlatformCollapsibleItem
             options={platformOptions}
           />
           // ))
@@ -36,4 +36,4 @@ const PlatformCollabsible = () => {
   );
 }
 
-export default PlatformCollabsible;
+export default PlatformCollapsible;

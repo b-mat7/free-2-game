@@ -1,6 +1,6 @@
 @use '../../../assets/styles/variables.module' as var;
 
-.collabsible {
+.collapsible {
 
   &:hover {
     cursor: pointer;
@@ -27,7 +27,7 @@
     // transition: transform 300ms ease-out;
   }
 
-  .collabsible_items {
+  .collapsible_items {
     display: flex;
     flex-direction: column;
     row-gap: 8px;
