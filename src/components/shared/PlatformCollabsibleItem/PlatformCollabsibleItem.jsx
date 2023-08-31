@@ -16,12 +16,13 @@ const PlatformCollabsibleItem = ({ options }) => {
             name={option.value}
             id={option.value}
             onChange={(event) => setPlatform(event.target.value)}
-            value={option.value}
+            // value={option.value}
             checked={platform === option.value}
           />
           <label
             htmlFor={option.value}
-            value={option.value} >
+            // value={option.value} 
+          >
             {option.label}
           </label>
         </article>
