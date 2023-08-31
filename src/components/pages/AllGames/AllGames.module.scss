@@ -28,6 +28,14 @@
     column-gap: 2rem;
     font-family: var.$font-family_accent;
   }
+
+  .no_results {
+    color: var.$color_font_white;
+    text-align: center;
+    margin-top: 2rem;
+    font-family: var.$font-family_accent;
+    font-size: 2.5rem;
+  }
 }
 
 @media screen and (max-width: var.$breakpoint_xs) {

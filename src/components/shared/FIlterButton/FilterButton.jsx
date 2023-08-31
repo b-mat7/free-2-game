@@ -8,19 +8,16 @@ import styles from './FilterButton.module.scss'
 
 const FilterButton = ({ filter }) => {
   const { genre, setGenre } = useContext(GenreContext);
-  console.log(filter)
 
   const handleClick = () => {
     const newGenres = [...genre].filter(genre => genre !== filter);
     setGenre(newGenres);
   }
   return (
-    <p className={styles.filter_button}>
-      <span onClick={() => handleClick()}>
+    <div className={styles.filter_button} onClick={() => handleClick()}>
         <img src={image} alt="close" />
-      </span>
-      {filter}
-    </p>
+      <span>{filter.toUpperCase()}</span>
+    </div>
   );
 }
 

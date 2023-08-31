@@ -1,11 +1,6 @@
 @use '../../../assets/styles/variables.module' as var;
 
 .collapsible {
-
-  &:hover {
-    cursor: pointer;
-  }
-
   .name {
     display: flex;
     justify-content: space-between;
@@ -20,6 +15,9 @@
     padding: 0.5rem 1rem;
     color: var.$color_font_white;
 
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   .icon {

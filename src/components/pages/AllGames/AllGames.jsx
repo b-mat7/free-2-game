@@ -65,16 +65,19 @@ const AllGames = () => {
       <div>
         <FilterButtons />
       </div>
-      <div className={gamesGridStyles.list_wrapper}>
-        {games.map((game) => {
-          return (
-            <ListItem
-              key={game.id}
-              game={game}
-            />
-          )
-        })}
-      </div>
+      {games.status === 0
+        ? <h1 className={styles.no_results}>No Results found</h1>
+        : <div className={gamesGridStyles.list_wrapper}>
+          {games.map((game) => {
+            return (
+              <ListItem
+                key={game.id}
+                game={game}
+              />
+            )
+          })}
+        </div>
+      }
     </section>
   );
 }

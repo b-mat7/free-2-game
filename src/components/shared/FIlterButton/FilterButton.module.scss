@@ -5,17 +5,14 @@
   display: flex;
   column-gap: 12px;
   font-family: var.$font-family_accent;
-  font-size: 1rem;
   font-weight: 500;
-  width: fit-content;
   padding-inline: 12px;
   padding-block: 6px;
+  background-color: var.$color_accent_bluelight;
   border: 1px solid var.$color_accent_greenlight;
-  border-radius: 12px;
+  border-radius: 10px;
 
-  span {
-    &:hover {
-      cursor: pointer;
-    }
+  &:hover {
+    cursor: pointer;
   }
 }
