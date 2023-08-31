@@ -1,13 +1,15 @@
 import { useContext, useEffect, useState } from 'react';
 
 import { PlatformContext } from '../../../contexts/PlatformContext';
+import { SortByContext } from '../../../contexts/SortByContext';
 import { getGamesByFilter } from '../../../assets/utilities/api/api';
 
 import PlatformCollapsible from '../../shared/PlatformCollapsible/PlatformCollapsible';
+import SortByCollapsible from '../../shared/SortByCollapsible/SortByCollapsible';
 import ListItem from '../../shared/ListItem/ListItem';
 
-import gamesGridStyles from '../../../modules/GamesGrid.module.scss'
-import styles from './AllGames.module.scss'
+import gamesGridStyles from '../../../modules/GamesGrid.module.scss';
+import styles from './AllGames.module.scss';
 
 
 const AllGames = () => {
@@ -16,12 +18,13 @@ const AllGames = () => {
   const [filter, setFilter] = useState("");
 
   const {platform, setPlatfom} = useContext(PlatformContext);
+  const {sortBy, setSortBy} = useContext(SortByContext);
 
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(()=> {
-    setFilter(`games?platform=${platform}`)
-  }, [platform])
+    setFilter(`games?platform=${platform}&sort-by=${sortBy}`)
+  }, [platform, sortBy])
 
   useEffect(() => {
     if (filter !== "") {
@@ -46,7 +49,7 @@ const AllGames = () => {
       <div className={styles.controls}>
         <PlatformCollapsible />
         <button>Genre</button>
-        <button>Sort by</button>
+        <SortByCollapsible />
       </div>
       <div className={gamesGridStyles.list_wrapper}>
         {games.map((game) => {

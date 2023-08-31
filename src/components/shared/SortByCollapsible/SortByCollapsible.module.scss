@@ -1,0 +1,40 @@
+@use '../../../assets/styles/variables.module' as var;
+
+.collapsible {
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  .name {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // width: 100%;
+    background-color: var.$color_accent_bluelight;
+    border-radius: 10px;
+
+    font-weight: 700;
+
+    min-width: 220px;
+    padding: 0.5rem 1rem;
+    color: var.$color_font_white;
+
+  }
+
+  .icon {
+    transform: rotate(180deg);
+    // transition: transform 300ms ease-out;
+  }
+
+  .collapsible_items {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    // width: 100%;
+    background-color: var.$color_accent_bluedark;
+    border-radius: 12px;
+    position: absolute;
+  }
+
+}

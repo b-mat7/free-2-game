@@ -16,7 +16,7 @@ const PlatformCollapsible = () => {
 
   const handleClick = () => {
     setIsCollapsed(prev => !prev)
-  }
+  };
 
   return (
     <section className={styles.collapsible} onClick={() => handleClick()}>
@@ -29,7 +29,6 @@ const PlatformCollapsible = () => {
           <PlatformCollapsibleItem
             options={platformOptions}
           />
-          // ))
         }
       </div>
     </section>

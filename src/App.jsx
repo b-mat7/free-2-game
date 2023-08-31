@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
 
 import { PlatformContext } from './contexts/PlatformContext'
+import { SortByContext } from './contexts/SortByContext'
 
 import SearchBar from './components/shared/SearchBar/SearchBar'
 import Home from './components/pages/Home/Home'
@@ -14,18 +15,20 @@ import './App.scss'
 function App() {
 
   const [platform, setPlatform] = useState("all");
+  const [sortBy, setSortBy] = useState("relevance");
 
   return (
     <main>
 
       <PlatformContext.Provider value={{ platform, setPlatform }}>
-        <SearchBar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/allgames" element={<AllGames />} />
-          <Route path="/details/:id" element={<GameDetails />} />
-        </Routes>
-
+        <SortByContext.Provider value={{ sortBy, setSortBy }}>
+          <SearchBar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/allgames" element={<AllGames />} />
+            <Route path="/details/:id" element={<GameDetails />} />
+          </Routes>
+        </SortByContext.Provider>
       </PlatformContext.Provider>
 
       {/* <div>
