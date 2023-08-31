@@ -15,7 +15,7 @@ const PlatformCollapsible = () => {
   ];
 
   const handleClick = () => {
-    setIsCollapsed(prev => !prev)
+    setIsCollapsed((prev) => !prev)
   };
 
   return (
