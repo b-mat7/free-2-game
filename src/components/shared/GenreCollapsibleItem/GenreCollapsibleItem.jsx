@@ -7,6 +7,19 @@ const GenreCollapsibleItem = ({ options }) => {
 
   const { genre, setGenre } = useContext(GenreContext);
 
+  const handleClick = (event) => {
+    const clickedGenre = event.target.value;
+    const currentGenres = [...genre];
+    const clickedGenreInCurrentGenres = currentGenres.includes(clickedGenre);
+    const clickedGenreIndex = currentGenres.indexOf(clickedGenre);
+
+    if(clickedGenreInCurrentGenres) {
+      setGenre(currentGenres.splice(clickedGenreIndex, 1))
+    } else {
+      setGenre([...currentGenres, clickedGenre])
+    }
+  }
+
   return (
     <>
       {options.map((option) => (
@@ -15,9 +28,9 @@ const GenreCollapsibleItem = ({ options }) => {
             type="checkbox"
             name={option.value}
             id={option.value}
-            onChange={(event) => setGenre(event.target.value)}
+            onChange={(event) => handleClick(event)}
             value={option.value}
-            checked={genre === option.value}
+            checked={genre.includes(option.value)}
           />
           <label
             htmlFor={option.value}

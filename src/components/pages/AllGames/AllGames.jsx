@@ -17,7 +17,6 @@ import styles from './AllGames.module.scss';
 
 
 const AllGames = () => {
-
   const [games, setGames] = useState([]);
   const [filter, setFilter] = useState("");
 
@@ -27,16 +26,12 @@ const AllGames = () => {
 
   const [isLoading, setIsLoading] = useState(true);
 
-  console.log(genre.length)
-  console.log(genre)
-
   useEffect(() => {
     if(genre.length === 0) {
       setFilter(`games?platform=${platform}&sort-by=${sortBy}`);
     } else {
-      setFilter(`games?platform=${platform}&category=${genre}&sort-by=${sortBy}`);
-      // const genreString = genre.join(".")
-      // setFilter(`filter?platform=${platform}&tag=${genreString}`);
+      const genreString = genre.join(".")
+      setFilter(`filter?platform=${platform}&tag=${genreString}`);
     }
   }, [platform, genre, sortBy])
 

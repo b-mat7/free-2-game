@@ -5,9 +5,6 @@ import { getSingleGameDetailsByFilter } from '../../../assets/utilities/api/api'
 
 import DetailItem from '../../shared/DetailItem/DetailItem';
 
-import styles from './GameDetails.module.scss'
-
-
 const GameDetails = () => {
   const [game, setGame] = useState({});
 
