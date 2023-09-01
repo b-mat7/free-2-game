@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 
 import { getGamesByFilter, getGamesDetailsbyFilter } from '../../../assets/utilities/api/api';
 
+import Button from '../../shared/Button/Button';
 import ListItem from '../../shared/ListItem/ListItem';
 
 import gamesGridStyles from '../../../modules/GamesGrid.module.scss'
@@ -49,7 +50,7 @@ const Home = () => {
     return <p>Loading...</p>
   }
 
-  const currentMonth = new Date().toLocaleString("en-US", { month: "long", year: "numeric" });
+  const currentMonth = new Date().toLocaleString("en-US", { month: "long", year: "2-digit" });
 
   return (
     <section className={styles.home}>
@@ -59,7 +60,12 @@ const Home = () => {
       <section className={styles.ranking}>
         <div className={styles.header}>
           <h2>Top PC-Games {currentMonth}</h2>
-          <button>Show More</button>
+          <Button
+            title={"Show More"}
+            path={"/allgames"}
+            platformByButton={"pc"}
+            sortByByButton={"popularity"}
+          />
         </div>
         <div className={gamesGridStyles.list_wrapper}>
           {topPcGames.map((game) => (
@@ -73,7 +79,12 @@ const Home = () => {
       <section className={styles.ranking}>
         <div className={styles.header}>
           <h2>Top Browser-Games {currentMonth}</h2>
-          <button>Show More</button>
+          <Button
+            title={"Show More"}
+            path={"/allgames"}
+            platformByButton={"browser"}
+            sortByByButton={"popularity"}
+          />
         </div>
         <div className={gamesGridStyles.list_wrapper}>
           {topBrowserGames.map((game) => (
@@ -87,7 +98,12 @@ const Home = () => {
       <section className={styles.ranking}>
         <div className={styles.header}>
           <h2>Recently Published</h2>
-          <button>Show More</button>
+          <Button
+            title={"Show More"}
+            path={"/allgames"}
+            platformByButton={"all"}
+            sortByByButton={"release-date"}
+          />
         </div>
         <div className={gamesGridStyles.list_wrapper}>
           {topRecentlyAdded.map((game) => (

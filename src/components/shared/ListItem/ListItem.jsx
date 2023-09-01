@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 
+import Button from '../Button/Button';
 import iconWindows from '../../../assets/images/icon_windows.svg'
 import iconBrowser from '../../../assets/images/icon_browser.svg'
 
@@ -21,8 +22,10 @@ const ListItem = ({ game }) => {
         <p>{game.short_description}</p>
       </div>
       <div className={styles.details}>
-        <button>Show Details</button>
-        <Link to={`/details/${game.id}`}>Show Details</Link>
+        <Button
+          title={"Details"}
+          path={`/details/${game.id}`}
+        />
       </div>
       <div className={styles.info}>
         <Link>{platformIcon}</Link>

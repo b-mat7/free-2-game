@@ -1,7 +1,28 @@
+import { useContext } from 'react'
+import { useNavigate } from 'react-router-dom'
+
+import { PlatformContext } from '../../../contexts/PlatformContext'
+import { GenreContext } from '../../../contexts/GenreContext'
+import { SortByContext } from '../../../contexts/SortByContext'
+
+import buttonStyles from '../../../modules/ButtonStyle.module.scss'
 import detailGridStyles from '../../../modules/DetailGrid.module.scss'
 import styles from './DetailItem.module.scss'
 
 const DetailItem = ({ game }) => {
+
+  const { platform, setPlatform } = useContext(PlatformContext);
+  const { genre, setGenre } = useContext(GenreContext);
+  const { sortBy, setSortBy } = useContext(SortByContext);
+
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(-1);
+    setPlatform(platform);
+    setGenre(genre);
+    setSortBy(sortBy);
+  }
   return (
     <article className={styles.details_item}>
       <div className={styles.hero}>
@@ -23,8 +44,13 @@ const DetailItem = ({ game }) => {
               </div>
             </div>
             <div className={styles.links}>
-              <button>Play Now</button>
-              <button>Back</button>
+              <a className={buttonStyles.button}
+                href={`${game.game_url}`}
+                target='blank'
+              >Play Now</a>
+              <button className={buttonStyles.button}
+                onClick={(() => handleClick())}
+              >Back</button>
             </div>
           </div>
           <div className={styles.about}>

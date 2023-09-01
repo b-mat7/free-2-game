@@ -1,0 +1,30 @@
+@use '../../src/assets/styles/variables.module' as var;
+
+.button {
+  font-family: var.$font-family_accent;
+  background-color: var.$color_accent_bluelight;
+  color: var.$color_font_white;
+  padding: 0.5rem 1rem;
+  min-width: 75px;
+  border-radius: 10px;
+  border: 1px solid var.$color_accent_greenlight;
+  font-size: 1.1rem;
+  font-weight: 400;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: var.$breakpoint_xs) {
+  .button {
+    font-size: 1rem;
+    padding: 0.35rem 0.85rem;
+  }
+}
+
+@media screen and (max-width: var.$breakpoint_xxs) {
+  .button {
+    padding: 0.25rem 0.75rem;
+  }
+}
