@@ -14,5 +14,8 @@
 
   &:hover {
     cursor: pointer;
+    background-color: var.$color_accent_greenlight;
+    border: 1px solid var.$color_accent_bluelight;
+    color: var.$color_accent_bluelight;
   }
 }

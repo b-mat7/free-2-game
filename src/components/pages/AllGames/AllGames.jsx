@@ -1,5 +1,3 @@
-// import { dataListItems } from '../../../assets/utilities/data/data';
-
 import { useContext, useEffect, useState } from 'react';
 
 import { PlatformContext } from '../../../contexts/PlatformContext';

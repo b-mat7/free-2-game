@@ -4,6 +4,13 @@
   max-width: 300px;
   border-radius: 25px;
   background-color: var.$color_accent_bluedark;
+  border: 1px solid var.$color_accent_bluelight;
+  transition: transform 300ms ease-out;
+
+  &:hover {
+    border: 1px solid var.$color_accent_greenlight;
+    transform: translateY(-3%);
+  }
 
   .hero img {
     border-radius: 25px;
@@ -27,8 +34,6 @@
       -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
       overflow: hidden;
-      // text-overflow: ellipsis;
-      // overflow-wrap: normal;
     }
   }
 

@@ -12,17 +12,12 @@
   font-family: var.$font-family_primary;
   font-weight: 200;
   color: var.$color_font_smoke;
-  
-  // line-height: var.$line-height_primary;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-  // color-scheme: light dark;
-
-  // background-color: var.$color_primary;
 
   background: url(var.$root_background_image);
   background-size: cover;

@@ -2,8 +2,9 @@
 
 .spinner {
   position: absolute;
-  top: 40%;
-  left: 40%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
   .pacman {
     min-width: 250px;
@@ -48,5 +49,27 @@
 
   100% {
     opacity: 0.3;
+  }
+}
+
+@media screen and (max-width: var.$breakpoint_xs) {
+  .spinner .pacman {
+    min-width: 180px;
+    min-height: 180px;
+  }
+
+  .spinner .info {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: var.$breakpoint_xxs) {
+  .spinner .pacman {
+    min-width: 120px;
+    min-height: 120px;
+  }
+
+  .spinner .info {
+    font-size: 1.5rem;
   }
 }
