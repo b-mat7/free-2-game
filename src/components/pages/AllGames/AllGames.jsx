@@ -7,6 +7,7 @@ import { GenreContext } from '../../../contexts/GenreContext';
 import { SortByContext } from '../../../contexts/SortByContext';
 import { getGamesByFilter } from '../../../assets/utilities/api/api';
 
+import LoadingSpinner from '../../shared/LoadingSpinner/LoadingSpinner';
 import PlatformCollapsible from '../../shared/PlatformCollapsible/PlatformCollapsible';
 import SortByCollapsible from '../../shared/SortByCollapsible/SortByCollapsible';
 import GenreCollapsible from '../../shared/GenreCollapsible/GenreCollapsible';
@@ -48,7 +49,7 @@ const AllGames = () => {
   }, [filter])
 
   if (isLoading) {
-    return <p>Loading...</p>
+    return <LoadingSpinner />
   }
 
   return (
@@ -61,7 +62,6 @@ const AllGames = () => {
         <GenreCollapsible />
         <SortByCollapsible />
       </div>
-      {/* <div className={styles.controls_filter_wrapper}> */}
       <div>
         <FilterButtons />
       </div>

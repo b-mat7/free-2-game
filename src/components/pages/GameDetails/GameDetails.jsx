@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 
 import { getSingleGameDetailsByFilter } from '../../../assets/utilities/api/api';
 
+import LoadingSpinner from '../../shared/LoadingSpinner/LoadingSpinner';
 import DetailItem from '../../shared/DetailItem/DetailItem';
 
 const GameDetails = () => {
@@ -21,7 +22,7 @@ const GameDetails = () => {
   }, [gameId])
 
   if (isLoading) {
-    return <p>Loading...</p>
+    return <LoadingSpinner />
   }
 
   return (

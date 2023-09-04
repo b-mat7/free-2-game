@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 
 import { getGamesByFilter, getGamesDetailsbyFilter } from '../../../assets/utilities/api/api';
 
+import LoadingSpinner from '../../shared/LoadingSpinner/LoadingSpinner';
 import Button from '../../shared/Button/Button';
 import ListItem from '../../shared/ListItem/ListItem';
 
@@ -47,7 +48,7 @@ const Home = () => {
   // }, [])
 
   if (isLoading) {
-    return <p>Loading...</p>
+    return <LoadingSpinner />
   }
 
   const currentMonth = new Date().toLocaleString("en-US", { month: "long", year: "2-digit" });

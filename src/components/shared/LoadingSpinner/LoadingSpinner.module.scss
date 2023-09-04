@@ -1,0 +1,52 @@
+@use '../../../assets/styles/variables.module' as var;
+
+.spinner {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+
+  .pacman {
+    min-width: 250px;
+    min-height: 250px;
+
+    background: url("../../../assets/images/PacMan.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    animation: movePacMan 2000ms linear infinite;
+  }
+
+  .info {
+    color: var.$color_font_white;
+    font-family: var.$font-family_primary;
+    font-size: 2.5rem;
+    font-weight: 700;
+
+    animation: blink 1500ms linear infinite;
+  }
+}
+
+@keyframes movePacMan {
+  0% {
+    transform: translateX(-55%);
+  }
+
+  100% {
+    transform: translateX(90%);
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.3;
+  }
+}
