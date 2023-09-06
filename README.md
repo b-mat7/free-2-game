@@ -41,7 +41,7 @@
 
 This was the final project of the front-end portion of SuperCode's Full-Stack Webdev course. The page uses the [https://www.freetogame.com/](https://www.freetogame.com/) API, special attention was paid to the multiple filtering options that persist until the page is closed. 
 
-Unfortunately, the API is not the most reliable. It often times out during evening CET, and filtering by (multiple) genres in particular can lead to server-side errors. Nevertheless, as a gamer, I had a lot of fun building this app.
+Unfortunately, the API is not the most reliable. It sometimes drops out during the CET evening hours, and filtering by (multiple) genres in particular can lead to server-side errors. Nevertheless, as a gamer I had a lot of fun developing this app, and to help alleviate the waiting time I added PacMan ;)
 
 Project Link: [https://free-2-game.netlify.app](https://free-2-game.netlify.app)
 
