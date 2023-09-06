@@ -15,7 +15,7 @@ const FilterButton = ({ filter }) => {
   }
   return (
     <div className={styles.filter_button} onClick={() => handleClick()}>
-        <img src={image} alt="close" />
+      <img src={image} alt="close" />
       <span>{filter.toUpperCase()}</span>
     </div>
   );

@@ -13,7 +13,7 @@ const GenreCollapsibleItem = ({ options }) => {
     const clickedGenreInCurrentGenres = currentGenres.includes(clickedGenre);
     const clickedGenreIndex = currentGenres.indexOf(clickedGenre);
 
-    if(clickedGenreInCurrentGenres) {
+    if (clickedGenreInCurrentGenres) {
       setGenre(currentGenres.splice(clickedGenreIndex, 1))
     } else {
       setGenre([...currentGenres, clickedGenre])
@@ -34,7 +34,6 @@ const GenreCollapsibleItem = ({ options }) => {
           />
           <label
             htmlFor={option.value}
-          // value={option.value} 
           >
             {option.label}
           </label>
