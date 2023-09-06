@@ -21,7 +21,6 @@ const PlatformCollapsibleItem = ({ options }) => {
           />
           <label
             htmlFor={option.value}
-            // value={option.value} 
           >
             {option.label}
           </label>

@@ -27,7 +27,7 @@ const AllGames = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    if(genre.length === 0) {
+    if (genre.length === 0) {
       setFilter(`games?platform=${platform}&sort-by=${sortBy}`);
     } else {
       const genreString = genre.join(".")

@@ -29,6 +29,7 @@ export const getGamesDetailsbyFilter = (filter) => {
       return response.json();
     })
     // = getGamesByFilter(filter)
+
     .then((gamesData) => {
       const gameDetailPromises = gamesData.map((game) => {
         return fetch(`${apiLink}game?id=${game.id}`, options)
