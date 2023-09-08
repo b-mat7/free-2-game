@@ -1,11 +1,12 @@
 @use '../../../assets/styles/variables.module' as var;
 
 .search_item {
-  max-width: 300px;
+  max-width: 290px;
   padding: 1rem;
   background-color: var.$color_accent_bluedark;
   display: flex;
   justify-content: space-between;
+  gap: 0.5rem;
   align-items: center;
   border-radius: 15px;
   border: 1px solid var.$color_accent_bluelight;

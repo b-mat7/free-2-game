@@ -67,7 +67,7 @@ Follow these steps to setup the project locally.
 
 ### Prerequisites
 
-Updated state-of-the-art webbrowser, LiveServer VS-Code plugin.
+Updated state-of-the-art webbrowser, Node.js.
 
 ### Installation
 
@@ -75,8 +75,14 @@ Updated state-of-the-art webbrowser, LiveServer VS-Code plugin.
    ```sh
    git clone https://github.com/b-mat7/Free-2-Game.git
    ```
-2. With your terminal inside the project folder, use ```npm i``` to install the required node packages
-3. With your terminal inside the project folder, use ```npm run dev``` and open the listed localhost address with your webbrowser.
+2. To install the required node packages; with your terminal inside the project folder, use 
+    ```sh
+    npm i
+    ``` 
+3. With your terminal inside the project folder, use the command below and open the listed localhost address with your webbrowser.
+    ```sh
+    npm run dev
+    ```
 
 <p align="right"><a href="#readme-top">[ Back to top ]</a></p>
 

@@ -1,5 +1,6 @@
 "use strict"
 
+/* ===== API information ===== */
 const apiLink = "https://free-to-play-games-database.p.rapidapi.com/api/"
 
 const apiKey = import.meta.env.VITE_API_KEY;
@@ -13,6 +14,7 @@ const options = {
   }
 };
 
+/* ===== FETCH DATA FUNCTIONS ===== */
 export const getGamesByFilter = (filter) => {
   return fetch(`${apiLink}${filter}`, options)
     .then((response) => {

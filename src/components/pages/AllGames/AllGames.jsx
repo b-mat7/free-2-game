@@ -63,18 +63,21 @@ const AllGames = () => {
       <div>
         <FilterButtons />
       </div>
-      {games.status === 0
-        ? <h1 className={styles.no_results}>No Results found</h1>
-        : <div className={gamesGridStyles.list_wrapper}>
-          {games.map((game) => {
-            return (
-              <ListItem
-                key={game.id}
-                game={game}
-              />
-            )
-          })}
-        </div>
+      {games
+        ?
+        games.status === 0
+          ? <h1 className={styles.no_results}>No Results found</h1>
+          : <div className={gamesGridStyles.list_wrapper}>
+            {games.map((game) => {
+              return (
+                <ListItem
+                  key={game.id}
+                  game={game}
+                />
+              )
+            })}
+          </div>
+        : <h1 className={styles.no_results}>API not resposive :( delete last genre or reload page</h1>
       }
     </section>
   );
