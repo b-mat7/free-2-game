@@ -43,9 +43,15 @@
       padding-right: 2.5rem;
       text-align: center;
       color: var.$color_font_white;
-      font-size: 1.5rem;
-      font-weight: 600;
+      font-size: 1.2rem;
+      font-weight: 400;
       font-family: var.$font-family_accent;
+      opacity: 0.5;
+
+      &:hover,
+      &:focus {
+        opacity: 1;
+      }
     }
 
     .search_output {
