@@ -14,6 +14,8 @@
   max-width: var.$root_width_desktop;
   margin: 0 auto;
   padding: 4rem 0;
+
+  height: 100svh;   // mobile viewports
 }
 
 @media screen and (max-width: var.$breakpoint_xxs) {
